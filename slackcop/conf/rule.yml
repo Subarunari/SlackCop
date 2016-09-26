@@ -1,0 +1,7 @@
+userprofile:
+    required:
+        2fa: yes
+channel:
+    required:
+        purpose: yes
+        topic: yes 
