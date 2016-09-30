@@ -14,7 +14,7 @@ class Channel(CustomRule):
 
         response = slack_client.api_call("channels.info", channel=channel_id)
         if not response.get("ok"):
-            return False, ""
+            return True, ""
 
         channel_section = response.get("channel")
         topic = channel_section.get("topic").get("value")
