@@ -12,7 +12,10 @@ class UserProfile(CustomRule):
         has2fa = self.conf.get("2fa")
 
         if event_type in ["team_join", "user_changes"]:
-            result = event_message.get("user").get("has_2fa") is has2fa
+            response_has2fa = event_message.get("user").get("has_2fa")
+            if response_has2fa is None:
+                return False
+            result = response_has2fa is has2fa
             target_user = event_message.get("user").get("id")
         elif event_type in ["presence_change"]:
             if event_message.get("presence") == "active":

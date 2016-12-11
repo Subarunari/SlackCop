@@ -25,6 +25,7 @@ Setup
     * $ pip install -r requirements.txt
 2. Setup configuration file.
     * Setting slack token in slackcop/conf/slack.yml
+        * required administrator authority.
     * Setting Unique Team Rule in slackcop/conf/rule.yml
 3. $ python slackcop.py &
 
